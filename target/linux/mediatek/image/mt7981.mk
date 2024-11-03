@@ -780,3 +780,106 @@ define Device/routerich_ax3000
   DEVICE_PACKAGES := $(MT7981_USB_PKGS)
 endef
 TARGET_DEVICES += routerich_ax3000
+
+define Device/nradio_wt9103_No2
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-660-No2-manper
+  DEVICE_DTS := mt7981-nradio-wt9103-660No2
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9103
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 131072k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += nradio_wt9103_No2
+
+define Device/nradio_wt9103_512m
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-660-singl-manper
+  DEVICE_DTS := mt7981-nradio-wt9103-512m
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9103
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 131072k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += nradio_wt9103_512m
+
+define Device/nradio_wt9108_singl-manper
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-668-singl-manper
+  DEVICE_DTS := mt7981-nradio-wt9108-single
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9108
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 131072k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += nradio_wt9108_singl-manper
+
+define Device/nradio_wt9108_No2-manper
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-668-No2-manper
+  DEVICE_DTS := mt7981-nradio-wt9108-No2
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9108
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 131072k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += nradio_wt9108_No2-manper
+
+define Device/nradio_wt9108_No2-manper_650
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-650-No2-manper
+  DEVICE_DTS := mt7981-nradio-wt9108-No2-650
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9108
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 131072k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += nradio_wt9108_No2-manper_650
+
+define Device/nradio_wt9108_singl-manper-650
+  DEVICE_VENDOR := NRADIO
+  DEVICE_MODEL := C8-650-Singl-manper
+  DEVICE_DTS := mt7981-nradio-wt9108-single-650
+  DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
+  SUPPORTED_DEVICES := nradio,wt9108
+  UBINIZE_OPTS := -E 5
+  BLOCKSIZE := 128k
+  PAGESIZE := 2048
+  IMAGE_SIZE := 131072k
+  KERNEL_IN_UBI := 1
+  IMAGES += factory.bin
+  IMAGE/factory.bin := append-ubi | check-size $$$$(IMAGE_SIZE)
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+endef
+TARGET_DEVICES += nradio_wt9108_singl-manper-650
+
